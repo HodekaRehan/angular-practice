@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-practice';
+  isParaVisible: boolean = false
+  btnClicksArr = []
+
+  toggleDisplay(){
+    this.isParaVisible = !this.isParaVisible
+    this.btnClicksArr.push(new Date())
+  }
 }
