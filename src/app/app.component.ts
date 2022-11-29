@@ -6,12 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-practice';
-  isParaVisible: boolean = false
-  btnClicksArr = []
+  serverElements = [
+    {type: 'server', name: 'Test Server', content: 'Some Content' }
+  ]
 
-  toggleDisplay(){
-    this.isParaVisible = !this.isParaVisible
-    this.btnClicksArr.push(new Date())
+  onServerAdded(serverData: {srvName: string, srvContent: string}){
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.srvName,
+      content: serverData.srvContent
+    })
+  }
+
+  onBlueprintAdded(blueprintData: {srvName: string, srvContent: string}){
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.srvName,
+      content: blueprintData.srvContent
+    })
   }
 }

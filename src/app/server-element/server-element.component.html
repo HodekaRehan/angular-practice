@@ -1,0 +1,7 @@
+<article class="list-group mb-2">
+   <h6 class="list-group-item bg-light fw-bold mb-0">{{element.name}}</h6>
+   <div class="list-group-item">
+      <p class=" mb-0 text-danger" *ngIf="element.type === 'server'">{{element.content}}</p>
+      <p class=" mb-0 text-primary" *ngIf="element.type === 'blueprint'">{{element.content}}</p>
+   </div>
+ </article>

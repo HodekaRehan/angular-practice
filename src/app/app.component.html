@@ -2,9 +2,21 @@
    <h1 class="text-center bg-danger text-uppercase text-white py-3">Component Communication</h1>
 </header>
 <main>
-   <section class="container">
-      
-   </section>
+   <div class="container">
+      <section>
+         <app-cockpit
+            (serverCreated)="onServerAdded($event)"
+            (blueprintCreated)="onBlueprintAdded($event)"
+         ></app-cockpit>
+      </section>
+      <hr>
+      <section>
+         <app-server-element
+            *ngFor="let serverElement of serverElements"
+            [srvElm]="serverElement"
+         ></app-server-element>
+      </section>
+   </div>
 
    
 </main>
